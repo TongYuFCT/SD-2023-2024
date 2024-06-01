@@ -10,7 +10,7 @@ ADD shorts.props .
 # copy the jar created by assembly to the docker image
 COPY target/*jar-with-dependencies.jar sd2324.jar
 
-# Copy keystores and truststore to the docker image
+# Copy keystores the dockerfile
 COPY tls/users0-ourorg.jks tls/
 COPY tls/shorts0-ourorg.jks tls/
 COPY tls/shorts1-ourorg.jks tls/
