@@ -12,7 +12,7 @@ import utils.Args;
 
 
 public class RestBlobsServer extends AbstractRestServer {
-	public static final int PORT = 5678;
+	public static final int PORT = 6789;
 	
 	private static Logger Log = Logger.getLogger(RestBlobsServer.class.getName());
 

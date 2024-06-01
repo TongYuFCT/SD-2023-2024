@@ -27,7 +27,7 @@ public class AbstractGrpcServer extends AbstractServer {
         super(log, service, String.format(SERVER_BASE_URI, IP.hostName(), port, GRPC_CTX));
 
 		try {
-        // Load the keystore
+       
         String keyStorePath = System.getProperty("javax.net.ssl.keyStore");
         String keyStorePassword = System.getProperty("javax.net.ssl.keyStorePassword");
 
@@ -36,14 +36,14 @@ public class AbstractGrpcServer extends AbstractServer {
             keystore.load(keyStoreStream, keyStorePassword.toCharArray());
         }
 
-        // Initialize the KeyManagerFactory
+        
         KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
         keyManagerFactory.init(keystore, keyStorePassword.toCharArray());
 
-        // Configure SSL context
+        
         SslContext sslContext = GrpcSslContexts.configure(SslContextBuilder.forServer(keyManagerFactory)).build();
 
-        // Build the server with SSL context
+        
         this.server = NettyServerBuilder.forPort(port)
                                         .addService(stub)
                                         .sslContext(sslContext)

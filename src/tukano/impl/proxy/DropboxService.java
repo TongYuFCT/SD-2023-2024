@@ -14,9 +14,9 @@ import tukano.impl.api.java.ExtendedBlobs;
 
 public class DropboxService implements ExtendedBlobs {
 
-    private static final String apiKey = "2hv460ohvrz8dzn";
-    private static final String apiSecret = "4m0r821tp0o32ma";
-    private static final String accessTokenStr = "sl.B2EOqAQDB1ZJlgUergBfYzOBD0z5xtSQgifA7vqZtyWnt7KDXJw4kWTk-tWhALc9hmQY0RWINtk4feMoN5oEaoh4KkIe3y0UHeo5fVez4_lMXYinVuY7AVyL2OReE-OyGDnymThhv97T";
+    private static final String apiKey = "f92fojako7fc9mi";
+    private static final String apiSecret = "tgntu4csp3t5ycc";
+    private static final String accessTokenStr = "sl.B2WpN4EmEOwnDYxa13EZ9TvR6YLA8purHpssPeDuHVN-NRuec08S5264LG3LA2Na2_5QZtfaDguHmpibInmi1AV5lGVdTJ_tBDCJWN5z-Siu1ibbgvZeQz81YGVT60xQ2GjdYg-IPu9F";
 
     private static final String UPLOAD_URL = "https://content.dropboxapi.com/2/files/upload";
     private static final String DOWNLOAD_URL = "https://content.dropboxapi.com/2/files/download";

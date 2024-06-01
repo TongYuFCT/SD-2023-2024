@@ -1,6 +1,5 @@
 package tukano.impl.rest.servers;
 
-import java.security.NoSuchAlgorithmException;
 import java.util.logging.Logger;
 
 import org.glassfish.jersey.server.ResourceConfig;
@@ -12,7 +11,7 @@ import utils.Args;
 
 
 public class RestUsersServer extends AbstractRestServer {
-	public static final int PORT = 3456;
+	public static final int PORT = 4567;
 	
 	private static Logger Log = Logger.getLogger(RestUsersServer.class.getName());
 

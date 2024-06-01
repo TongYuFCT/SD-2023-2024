@@ -3,7 +3,6 @@ package tukano.impl.grpc.clients;
 import static tukano.api.java.Result.error;
 import static tukano.api.java.Result.ok;
 import static tukano.api.java.Result.ErrorCode.INTERNAL_ERROR;
-import static tukano.api.java.Result.ErrorCode.TIMEOUT;
 
 import java.io.FileInputStream;
 import java.net.URI;
@@ -12,10 +11,8 @@ import java.util.function.Supplier;
 
 import javax.net.ssl.TrustManagerFactory;
 
-import org.checkerframework.checker.units.qual.t;
 
 import io.grpc.Channel;
-import io.grpc.ManagedChannelBuilder;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.netty.shaded.io.grpc.netty.GrpcSslContexts;
@@ -34,7 +31,8 @@ public class GrpcClient {
         this.serverURI = URI.create(serverUrl);
         String trustStorePath = System.getProperty("javax.net.ssl.trustStore");
         String trustStorePassword = System.getProperty("javax.net.ssl.trustStorePassword");
-		try {
+		
+        try {
 			KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
 			try (FileInputStream trustStoreStream = new FileInputStream(trustStorePath)) {
 				trustStore.load(trustStoreStream, trustStorePassword.toCharArray());

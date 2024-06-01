@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 public class ProxyRestBlobsServer extends AbstractRestServer {
     
-    public static final int PORT = 5679;
+    public static final int PORT = 8080;
     private static Logger Log = Logger.getLogger(RestBlobsServer.class.getName());
 
     private DropboxService dropboxService;
@@ -41,7 +41,7 @@ public class ProxyRestBlobsServer extends AbstractRestServer {
 
     public static void main(String[] args) {
         Args.use(args);
-        boolean clearState = Boolean.parseBoolean(args[0]);
-        new ProxyRestBlobsServer(Args.valueOf("-port", PORT), clearState).start();
+        boolean reset = Boolean.parseBoolean(args[0]);
+        new ProxyRestBlobsServer(Args.valueOf("-port", PORT), reset).start();
     }
 }
